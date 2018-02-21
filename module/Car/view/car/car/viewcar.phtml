@@ -1,0 +1,279 @@
+<?php
+$title = $car->make . " " . $car->model;
+$this->headTitle($title);
+?>
+<section>
+    <div class="container-fluid">
+        <div class="row car-page-title-row">
+            <div class="col-md-3"><h1><u><?php echo $this->escapeHtml($car->make); ?></u></h1></div>
+            <div class="col-md-5"><h3><?php echo $this->escapeHtml($car->model); ?> | <?php echo $this->escapeHtml($car->modelYear); ?></h3></div>
+            <div class="col-md-4"><div class="price-block"><h2><u>&pound;<?php echo $this->escapeHtml($car->price); ?></u></h2></div></div>
+        </div>
+    </div>
+</section>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <section>
+                <div class="row hidden-print">
+                    <div id="car-page-carousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner" role="listbox"></div>
+                        <a id="carousel-left" href="#carousel" class="left carousel-control" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a id="carousel-right" href="#carousel" class="right carousel-control" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                    </div>
+                </div>
+                <p><a href="<?php echo $this->url('car',
+                     array('action'=>'edit', 'id' => $car->id));?>">Edit this car</a> - 
+                     <a href="<?php echo $this->url('car',
+                     array('action'=>'delete', 'id' => $car->id));?>">Delete this car</a></p>
+            </section>
+            <section>
+                <div class="row car-slides-holder">
+                    <div class="car-picture-slides"></div>
+                </div>
+            </section>
+
+            <section>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <ul class="car-page-details">
+                            <li><strong>Model Year: </strong><?php echo $this->escapeHtml($car->modelYear); ?></li>
+                            <li><strong>Body Type: </strong><?php echo $this->escapeHtml($car->bodyType); ?></li>
+                            <li><strong>Mileage: </strong><?php echo $this->escapeHtml($car->mileage); ?> miles</li>
+                            <li><strong>Transmission: </strong><?php echo $this->escapeHtml($car->transmission); ?></li>
+                            <li><strong>Brochure Size: </strong><?php echo $this->escapeHtml($car->brochureSize); ?>l</li>
+                            <li><strong>Fuel Type: </strong><?php echo $this->escapeHtml($car->fuelType); ?> </li> 
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="car-page-details">
+                            <li><strong>Engine Power: </strong><?php echo $this->escapeHtml($car->enginePowerBHP); ?> bhp</li>
+                            <li><strong>Engine Size: </strong><?php echo $this->escapeHtml($car->engineSize); ?> cc</li>
+                            <li><strong>Acceleration(0-60): </strong><?php echo $this->escapeHtml($car->noughtToSixty); ?></li>
+                            <li><strong>Top Speed: </strong><?php echo $this->escapeHtml($car->topSpeed); ?> mph</li>
+                            <li><strong>Drivetrain: </strong><?php echo $this->escapeHtml($car->drivetrain); ?></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul class="car-page-details">
+                            <li><strong>Urban: </strong><?php echo $this->escapeHtml($car->economyUrban); ?>mpg</li>
+                            <li><strong>Extra Urban: </strong><?php echo $this->escapeHtml($car->economyExtraUrban); ?> mpg</li>
+                            <li><strong>Combined: </strong><?php echo $this->escapeHtml($car->economyCombined); ?> mpg</li>
+                            <li><strong>Emissions: </strong><?php echo $this->escapeHtml($car->emissions); ?> g/km</li>
+                            <li><strong>Annual Tax: </strong>£<?php echo $this->escapeHtml($car->annualTax); ?> </li>
+                        </ul> 
+                    </div>
+                </div> 
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <ul class="car-page-details">
+                            <li><strong>Number Of Doors: </strong><?php echo $this->escapeHtml($car->noOfDoors); ?></li>
+                            <li><strong>Number Of Seats: </strong><?php echo $this->escapeHtml($car->noOfSeats); ?></li>
+                        </ul>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="block">
+                        <p><?php echo $this->escapeHtml($car->details); ?></p>
+                        <br/>
+                        <p class="hidden-print">PLEASE NOTE: We here at South Manchester Autos ensure that the information portrayed is accurate, but there is a possibility of errors occurring. We advise you to contact us to confirm the exact specifications of the vehicle.
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section class="car-page-right-side">
+                <p>Call us now on</p>
+                <h4>0161 432 6070</h4>
+                <p>or email us at</p>
+                <h4 class="ensure-word-break"><a href="mailto:southmcrautos@outlook.com">southmcrautos@outlook.com</a></h4>
+                <div class="hidden-print">
+                    <p>___________</p>
+                    <br/>
+                    <div class="flex-holder">
+                        <a class="btn btn-secondary btn-lg btn-block" id="print-button" onclick="window.print()" href="#">Print This Page</a>
+                    </div>
+                    <br/>
+                    <div class="flex-holder">
+                        <a class="btn btn-secondary btn-lg btn-block" href="index.php">Return To Home</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<script>
+    jQuery(function ($) {
+        $.noConflict();
+        $(document).ready(function () {
+            //Add a click listener to the button with the id "print-button"
+            $('#print-button').click(function (e) {
+                //ensure the event does not refresh the page/send user back to top
+                e.preventDefault();
+            });
+            //Create a variable by getting the php div whose id is "car-picture-slides" from the body
+            var $carPicSlides = $('.car-picture-slides');
+            //Hide the main slides ul, then fade in at a speed of 600
+            $('.carousel-inner').hide().fadeIn(600);
+            //If the main car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPicture); ?>" === "") {
+                //Append an image/list entry to the ul with the "pictureNotUploaded" image
+                $('<div class="item active"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/pictureNotUploaded.bmp"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the first car image
+                $('<div class="item active"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPicture; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the first image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPicture; ?>.jpg" alt="No Picture" value="0"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+            //If the second car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPic2); ?>" === "") {
+                //Do Nothing
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the second car image
+                $('<div class="item"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic2; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the second image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic2; ?>.jpg" alt="No Picture" value="1"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+            //If the third car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPic3); ?>" === "") {
+                //Do Nothing
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the third car image
+                $('<div class="item"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic3; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the third image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic3; ?>.jpg" alt="No Picture" value="2"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+            //If the fourth car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPic4); ?>" === "") {
+                //Do Nothing
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the fourth car image
+                $('<div class="item"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic4; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the fourth image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic4; ?>.jpg" alt="No Picture" value="3"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+            //If the fifth car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPic5); ?>" === "") {
+                //Do Nothing
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the fifth car image
+                $('<div class="item"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic5; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the fifth image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic5; ?>.jpg" alt="No Picture" value="4"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+            //If the sixth car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPic6); ?>" === "") {
+                //Do Nothing
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the sixth car image
+                $('<div class="item"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic6; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the sixth image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic6; ?>.jpg" alt="No Picture" value="5"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+            //If the seventh car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPic7); ?>" === "") {
+                //Do Nothing
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the seventh car image
+                $('<div class="item"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic7; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the seventh image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic7; ?>.jpg" alt="No Picture" value="6"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+            //If the eigth car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPic8); ?>" === "") {
+                //Do Nothing
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the eigth car image
+                $('<div class="item"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic8; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the eighth image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic8; ?>.jpg" alt="No Picture" value="7"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+            //If the ninth car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPic9); ?>" === "") {
+                //Do Nothing
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the ninth car image
+                $('<div class="item"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic9; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the ninth image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic9; ?>.jpg" alt="No Picture" value="8"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+            //If the tenth car picture is empty
+            if ("<?php echo $this->escapeHtml($car->carPic10); ?>" === "") {
+                //Do Nothing
+                //Otherwise
+            } else {
+                //Append an image/list entry to the ul with the tenth/last car image
+                $('<div class="item"><img class="car-carousel-img" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic10; ?>.jpg"><div class="carousel-caption"></div></div>').appendTo('.carousel-inner');
+                //Append the image variable for the tenth image in the slide div, while setting it's alternate text and giving it a CSS-appropriate class
+                $('<img class="car-page-list-slide" src="<?php echo $this->basePath() ?>/img/<?php echo $car->carPic10; ?>.jpg" alt="No Picture" value="9"/></img>').appendTo('.car-picture-slides');
+            }
+            ;
+
+            $('#carousel-left').click(function () {
+                $('#car-page-carousel').carousel('prev');
+            });
+
+            $('#carousel-right').click(function () {
+                $('#car-page-carousel').carousel('next');
+            });
+            //Define a Timer variable for allowing the slide pictures to fade in one after another
+            var timer = 100;
+            //For each children in the car picture slides div, assign a function
+            $carPicSlides.children().each(function () {
+                //Fade in the current image after a timer of the current delay value
+                $(this).hide().delay(timer).fadeIn(timer);
+                //Increment the timer by 100 milliseconds
+                timer += 100;
+                //Attach a function to the current image for if this image is clicked
+                $(this).click(function () {
+                    //Get the value attribute value of the image and assign to a local variable
+                    var currentVal = parseInt($(this).attr("value"));
+                    $('#car-page-carousel').carousel(currentVal);
+                    //Pass the value variable to the slide function
+                    //slide(currentVal);
+                });
+                //Event handler for if the button is held down via mouse
+                $(this).mousedown(function () {
+                    //Change the text colour of the current button to blue
+                    $(this).css('border', '5px solid blue');
+                    $(this).css('-webkit-filter', 'brightness(50%)');
+                    $(this).css('filter', 'brightness(50%)');
+                });
+                //Event handler for if the button is released via mouse
+                $(this).mouseup(function () {
+                    //Change the background colour of the button to blue
+                    $(this).css('border', '');
+                    $(this).css('-webkit-filter', '');
+                    $(this).css('filter', '');
+                });
+            });
+        });
+    });
+</script>
+<script src="<?php echo $this->basePath() ?>/js/buttonHandler.js" type="text/javascript"></script>

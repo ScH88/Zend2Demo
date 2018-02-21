@@ -1,0 +1,68 @@
+<?php
+$title = 'Edit Car';
+$this->headTitle($title);
+?>
+<section>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>In this page, you can edit the car details passed over from the entry you clicked. Upon submitting, any changes you made to any of the existing details will be saved in that entry.</p>
+</section>
+<section>
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url(
+                'car', array(
+            'action' => 'edit',
+            'id' => $this->id)
+));
+$form->prepare();
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('carPicture'));
+echo $this->formRow($form->get('make'));
+echo $this->formRow($form->get('model'));
+echo $this->formRow($form->get('modelYear'));
+?>    
+</section>
+<section>
+    <?php
+    echo $this->formRow($form->get('engineSize'));
+    echo $this->formRow($form->get('brochureSize'));
+    echo $this->formRow($form->get('topSpeed'));
+    echo $this->formRow($form->get('noughtToSixty'));
+    echo $this->formRow($form->get('enginePowerBHP'));
+    echo $this->formRow($form->get('drivetrain'));
+    ?>
+</section>
+<section>
+
+    <?php
+    echo $this->formRow($form->get('economyUrban'));
+    echo $this->formRow($form->get('economyExtraUrban'));
+    echo $this->formRow($form->get('economyCombined'));
+    echo $this->formRow($form->get('emissions'));
+    echo $this->formRow($form->get('annualTax'));
+    ?>
+</section>
+<section>
+    <?php
+    echo $this->formRow($form->get('mileage'));
+    echo $this->formRow($form->get('bodyType'));
+    echo $this->formRow($form->get('noOfDoors'));
+    echo $this->formRow($form->get('noOfSeats'));
+    echo $this->formRow($form->get('transmission'));
+    echo $this->formRow($form->get('fuelType'));
+    echo $this->formRow($form->get('colour'));
+    echo $this->formRow($form->get('price'));
+    ?>
+</section>
+<section>
+    <?php
+    echo $this->formRow($form->get('details'));
+    ?>
+</section>
+<section>
+    <?php
+    echo $this->formSubmit($form->get('submit'));
+    echo $this->form()->closeTag();
+    ?>
+</section>
