@@ -1,0 +1,27 @@
+/* NAVBAR */
+
+nav {
+    min-height:55px;
+    padding-top:$block-padding;
+    background-color:$primary-red;
+    a {
+        color:$secondary-white !important;
+        font-size:18px;
+        font-weight:bold;
+        letter-spacing:-0.5px;
+        padding:15px 20px 15px 20px !important;
+        margin:5px $block-padding 0 $block-padding !important;
+    }
+} 
+
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus,
+.navbar-nav > .active > a, .navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus{
+    background:$secondary-white !important;
+    color:$primary-red !important;
+}
+
+.navbar-nav > li > a:active {
+    background:$light-colour !important;
+    color:$secondary-white !important;
+}

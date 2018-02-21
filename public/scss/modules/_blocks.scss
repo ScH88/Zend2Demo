@@ -1,0 +1,65 @@
+/* STANDARD BLOCKS */
+
+.block {
+    padding:$block-padding;
+}
+
+.block-light {
+    @extend .block;
+    @include add-background($light-colour);
+}
+
+.block-center {
+    text-align:center !important;
+}
+
+/* INDEX BLOCKS */
+.index-car-block {
+    width:100%;
+    padding:10px 0 10px 0;
+    margin:0;
+    @include add-border(2px, $base-font-colour, "all");
+    background:$index-car-background-colour; 
+}
+
+.index-car-img-block {
+}
+
+.index-car-desc-block {
+    @include add-border(2px, $base-font-colour, "left");
+    @include add-border(2px, $base-font-colour, "right");
+    padding:$block-padding;
+}
+
+.index-car-butt-block {
+    padding:$block-padding; 
+}
+
+/* CAR PAGE BLOCKS */
+
+.price-block {
+    background-color:$primary-red; 
+    @include border-radius(20px);
+    text-align:center;
+    color:$secondary-white;
+    height:90px;
+    padding-top:$h-margin;
+    padding-bottom:$h-margin;
+    font-size:30px;
+    margin-bottom:$block-padding;
+    margin-top:$block-padding;
+}
+
+.car-slides-holder {
+    text-align:center;
+}
+
+.car-page-right-side {
+    margin-left:-$h-margin;
+}
+
+/* FOOTER BLOCKS */
+
+.footer-block {
+    height:100%;
+}

@@ -1,0 +1,59 @@
+body {
+   font-family:$base-font-family;
+   font-size:$base-font-size;
+   line-height:1.7em;
+   color:$base-font-colour;
+   background:$secondary-white; 
+   padding-top:$header-height;
+}
+
+a {
+    color:$primary-red;
+}
+
+ul, li {
+    //Ensure all list elements do not have bullet points
+    list-style:none;
+    margin-bottom:$block-padding;
+}
+
+p {
+    text-align:justify;
+}
+
+input, textarea, button {
+    @include border-radius(0px);
+}
+
+h1, h2, h3 {
+    text-align:center !important;
+    font-weight:bold !important;
+    margin:0 !important;
+    padding-bottom:$h-margin !important;
+    padding-top:$h-margin !important;
+}
+
+h2 {
+    padding:5px !important;
+}
+
+h3 {    
+    [class="footer-heading"] {
+        color:secondary-colour;
+    }
+}
+
+h5 {
+    text-align:justify;
+    margin-bottom:$block-padding;
+}
+
+i {
+    margin-right:20px;
+}
+
+section {
+    padding: 30px 0;
+    width:90%;
+    margin:auto;
+}

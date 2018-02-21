@@ -1,0 +1,609 @@
+/** BASE - Base styles, variables, mixins e.t.c **/
+/* FONT COLOURS */
+/* BACKGROUND COLOURS */
+/* DIMENSIONS */
+/* MIXINS */
+/* line 1, ../scss/base/_normalize.scss */
+body {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 6, ../scss/base/_normalize.scss */
+h1, h2, h3, h4, h5 {
+  margin-top: 0;
+}
+
+/* line 10, ../scss/base/_normalize.scss */
+.page-header {
+  margin-top: 30px;
+}
+
+/* line 14, ../scss/base/_normalize.scss */
+.no-pad-top {
+  padding-top: 0;
+}
+
+/* line 18, ../scss/base/_normalize.scss */
+.extra-pad {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* line 23, ../scss/base/_normalize.scss */
+.top-inner {
+  padding-top: 90px;
+  padding-bottom: 30px;
+}
+
+/* line 28, ../scss/base/_normalize.scss */
+.clearfix {
+  clear: both;
+}
+
+/* line 1, ../scss/base/_base.scss */
+body {
+  font-family: "Segoe UI", "Segoe WP", "Segoe Regular", sans-serif;
+  font-size: 16px;
+  line-height: 1.7em;
+  color: black;
+  background: white;
+  padding-top: 80px;
+}
+
+/* line 10, ../scss/base/_base.scss */
+a {
+  color: red;
+}
+
+/* line 14, ../scss/base/_base.scss */
+ul, li {
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+/* line 20, ../scss/base/_base.scss */
+p {
+  text-align: justify;
+}
+
+/* line 24, ../scss/base/_base.scss */
+input, textarea, button {
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px;
+}
+
+/* line 28, ../scss/base/_base.scss */
+h1, h2, h3 {
+  text-align: center !important;
+  font-weight: bold !important;
+  margin: 0 !important;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
+}
+
+/* line 36, ../scss/base/_base.scss */
+h2 {
+  padding: 5px !important;
+}
+
+/* line 41, ../scss/base/_base.scss */
+h3 [class="footer-heading"] {
+  color: secondary-colour;
+}
+
+/* line 46, ../scss/base/_base.scss */
+h5 {
+  text-align: justify;
+  margin-bottom: 10px;
+}
+
+/* line 51, ../scss/base/_base.scss */
+i {
+  margin-right: 20px;
+}
+
+/* line 55, ../scss/base/_base.scss */
+section {
+  padding: 30px 0;
+  width: 90%;
+  margin: auto;
+}
+
+/** MODULES - Individual Website Components **/
+/* LISTS */
+/* line 3, ../scss/modules/_typography.scss */
+.list {
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+/* line 7, ../scss/modules/_typography.scss */
+.list li {
+  color: white;
+}
+
+/* Headings */
+/* line 14, ../scss/modules/_typography.scss */
+.footer-heading {
+  color: white;
+}
+
+/* MISC */
+/* line 20, ../scss/modules/_typography.scss */
+.price-tag {
+  font-size: 2.5em;
+  color: red;
+}
+
+/* line 25, ../scss/modules/_typography.scss */
+.ensure-word-break {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  /* This is the dangerous one in WebKit, as it breaks things wherever */
+  word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+  /* Adds a hyphen where the word breaks, if supported (No Blink) */
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* STANDARD BLOCKS */
+/* line 3, ../scss/modules/_blocks.scss */
+.block, .block-light {
+  padding: 10px;
+}
+
+/* line 7, ../scss/modules/_blocks.scss */
+.block-light {
+  background: #00009c;
+  color: white;
+}
+
+/* line 12, ../scss/modules/_blocks.scss */
+.block-center {
+  text-align: center !important;
+}
+
+/* INDEX BLOCKS */
+/* line 17, ../scss/modules/_blocks.scss */
+.index-car-block {
+  width: 100%;
+  padding: 10px 0 10px 0;
+  margin: 0;
+  border: 2px solid black;
+  background: #e4e4e4;
+}
+
+/* line 28, ../scss/modules/_blocks.scss */
+.index-car-desc-block {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  padding: 10px;
+}
+
+/* line 34, ../scss/modules/_blocks.scss */
+.index-car-butt-block {
+  padding: 10px;
+}
+
+/* CAR PAGE BLOCKS */
+/* line 40, ../scss/modules/_blocks.scss */
+.price-block {
+  background-color: red;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
+  text-align: center;
+  color: white;
+  height: 90px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 30px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* line 53, ../scss/modules/_blocks.scss */
+.car-slides-holder {
+  text-align: center;
+}
+
+/* line 57, ../scss/modules/_blocks.scss */
+.car-page-right-side {
+  margin-left: -15px;
+}
+
+/* FOOTER BLOCKS */
+/* line 63, ../scss/modules/_blocks.scss */
+.footer-block {
+  height: 100%;
+}
+
+/* BUTTONS */
+/* line 3, ../scss/modules/_buttons.scss */
+.flex-holder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  resize: vertical;
+  overflow: auto;
+}
+
+/* line 11, ../scss/modules/_buttons.scss */
+.btn-primary, .btn-secondary {
+  background: red;
+  border: 2px solid #ff6666;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  color: #FFF;
+  font-weight: bold;
+  height: auto;
+  font-size: 2em;
+  white-space: normal;
+  word-wrap: break-word;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-bottom: 15px;
+  padding-right: 10px;
+}
+
+/* line 27, ../scss/modules/_buttons.scss */
+.btn-secondary {
+  font-size: 1.5em;
+}
+
+/* line 32, ../scss/modules/_buttons.scss */
+.btn-primary:hover, .btn-secondary:hover, .btn-secondary:hover {
+  background: #ff3333;
+  border: 2px solid red;
+}
+
+/* line 37, ../scss/modules/_buttons.scss */
+.btn-primary:hover:active, .btn-secondary:hover:active, .btn-primary:hover:active, .btn-secondary:hover:active {
+  background: #cc0000;
+  border: 2px solid #990000;
+}
+
+/* line 42, ../scss/modules/_buttons.scss */
+.btn-primary:focus, .btn-secondary:focus, .btn-primary:active, .btn-secondary:active, .btn-secondary:focus, .btn-secondary:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* line 47, ../scss/modules/_buttons.scss */
+.btn-primary:active:focus, .btn-secondary:active:focus, .btn-secondary:active:focus {
+  background: #e60000 !important;
+}
+
+/* INDEX CAR TABLE */
+/* line 3, ../scss/modules/_components.scss */
+.index-car-detail {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* FORM COMPONENTS */
+/* line 3, ../scss/modules/_forms.scss */
+.form-control {
+  font-size: 1.3em;
+  width: 100%;
+  color: black;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+
+/* line 1, ../scss/modules/_images.scss */
+.banner-image {
+  width: 100%;
+}
+
+/* line 5, ../scss/modules/_images.scss */
+.index-car-photo {
+  width: 100%;
+}
+
+/* line 9, ../scss/modules/_images.scss */
+.indexLogos {
+  width: 20px;
+  height: 20px;
+}
+
+/* line 14, ../scss/modules/_images.scss */
+.block-image img {
+  width: 100%;
+}
+
+/* line 18, ../scss/modules/_images.scss */
+.car-carousel-img {
+  width: 100%;
+}
+
+/* line 22, ../scss/modules/_images.scss */
+.car-page-list-slide {
+  width: 145px;
+  height: 145px;
+  margin: 3px;
+}
+
+/* line 28, ../scss/modules/_images.scss */
+.find-us-img {
+  width: 100%;
+}
+
+/** LAYOUTS - Page Layout Styles **/
+/* NAVBAR */
+/* line 3, ../scss/layouts/_nav.scss */
+nav {
+  min-height: 55px;
+  padding-top: 10px;
+  background-color: red;
+}
+/* line 7, ../scss/layouts/_nav.scss */
+nav a {
+  color: white !important;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: -0.5px;
+  padding: 15px 20px 15px 20px !important;
+  margin: 5px 10px 0 10px !important;
+}
+
+/* line 19, ../scss/layouts/_nav.scss */
+.navbar-nav > li > a:hover, .navbar-nav > li > a:focus,
+.navbar-nav > .active > a, .navbar-nav > .active > a:hover,
+.navbar-nav > .active > a:focus {
+  background: white !important;
+  color: red !important;
+}
+
+/* line 24, ../scss/layouts/_nav.scss */
+.navbar-nav > li > a:active {
+  background: #00009c !important;
+  color: white !important;
+}
+
+/* FOOTER */
+/* line 3, ../scss/layouts/_footer.scss */
+.footer-main {
+  background: red;
+  color: white;
+  min-height: 200px;
+  padding: 10px;
+  font-size: 1.2em;
+}
+/* line 9, ../scss/layouts/_footer.scss */
+.footer-main a {
+  color: #FFF;
+}
+/* line 13, ../scss/layouts/_footer.scss */
+.footer-main ul {
+  margin: 0;
+  padding: 0;
+}
+/* line 17, ../scss/layouts/_footer.scss */
+.footer-main li {
+  line-height: 1.5em;
+  list-style: none;
+}
+
+/* 
+*
+*
+* POINT OF MOBILE/TABLET NAVBAR COMPRESSION & CONTAINER-FLUID REPOSITIONING 
+*
+*
+*/
+@media (max-width: 767px) {
+  /* NAVIGATION */
+  /* line 12, ../scss/layouts/_mobile.scss */
+  .navbar-nav > li > a {
+    margin-top: 10px !important;
+    margin-bottom: 5px !important;
+  }
+
+  /* line 17, ../scss/layouts/_mobile.scss */
+  .navbar-collapse {
+    margin-top: 10px;
+  }
+
+  /* IMAGES */
+  /* line 22, ../scss/layouts/_mobile.scss */
+  .banner-image {
+    height: 65px;
+  }
+
+  /* line 26, ../scss/layouts/_mobile.scss */
+  .image {
+    display: block;
+    margin: 20px auto 0 auto;
+  }
+
+  /* line 31, ../scss/layouts/_mobile.scss */
+  .indexLogos {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* line 36, ../scss/layouts/_mobile.scss */
+  .car-page-list-slide {
+    width: 110px;
+    height: 110px;
+  }
+
+  /* line 41, ../scss/layouts/_mobile.scss */
+  .find-us-img {
+    height: 380px;
+  }
+
+  /* FOOTER */
+  /* line 47, ../scss/layouts/_mobile.scss */
+  .footer-main ul {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  /* line 52, ../scss/layouts/_mobile.scss */
+  .footer-main h4 {
+    text-align: center;
+  }
+
+  /* line 57, ../scss/layouts/_mobile.scss */
+  #footer-map {
+    margin-bottom: 20px;
+  }
+
+  /* BLOCKS */
+  /* line 62, ../scss/layouts/_mobile.scss */
+  .index-car-block {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  /* line 67, ../scss/layouts/_mobile.scss */
+  .index-car-desc-block {
+    border: none;
+  }
+
+  /* line 71, ../scss/layouts/_mobile.scss */
+  .car-page-right-side {
+    margin-left: 15px;
+  }
+
+  /* COMPONENTS */
+  /* line 76, ../scss/layouts/_mobile.scss */
+  #car-page-carousel {
+    margin-bottom: 30px;
+  }
+
+  /* line 80, ../scss/layouts/_mobile.scss */
+  .car-slides-holder {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* line 87, ../scss/layouts/_mobile.scss */
+  .car-page-details {
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+@media (max-width: 640px) {
+  /* IMAGES */
+  /* line 96, ../scss/layouts/_mobile.scss */
+  .find-us-img {
+    height: 330px;
+  }
+
+  /* BLOCKS */
+  /* line 101, ../scss/layouts/_mobile.scss */
+  .car-slides-holder {
+    display: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (max-width: 480px) {
+  /* IMAGES */
+  /* line 112, ../scss/layouts/_mobile.scss */
+  .find-us-img {
+    height: 200px;
+  }
+
+  /* TYPOGRAPHY */
+  /* line 117, ../scss/layouts/_mobile.scss */
+  h1 {
+    font-size: 2em;
+  }
+}
+@media (max-width: 320px) {
+  /* NAV */
+  /* line 124, ../scss/layouts/_mobile.scss */
+  .navbar-brand {
+    width: 60%;
+  }
+
+  /* IMAGES */
+  /* line 129, ../scss/layouts/_mobile.scss */
+  .banner-image {
+    height: 60px;
+  }
+}
+@media print {
+  @page {
+    size: A4;
+}
+
+  /* line 7, ../scss/layouts/_print.scss */
+  header {
+    height: 60px;
+  }
+
+  /* line 11, ../scss/layouts/_print.scss */
+  body {
+    overflow-y: visible !important;
+    width: auto !important;
+    font-size: 1.5em !important;
+    line-height: 25px !important;
+  }
+
+  /* line 18, ../scss/layouts/_print.scss */
+  .hidden-print {
+    display: none !important;
+  }
+
+  /* line 22, ../scss/layouts/_print.scss */
+  section {
+    color: black !important;
+    background-color: white !important;
+    height: auto !important;
+    width: auto !important;
+    position: relative !important;
+    float: none !important;
+    display: block !important;
+    top: 0 !important;
+    left: 0 !important;
+    margin: 0 !important;
+    padding: 15px !important;
+    page-break-inside: avoid;
+  }
+
+  /* line 37, ../scss/layouts/_print.scss */
+  row {
+    margin: 0 !important;
+  }
+
+  /* line 41, ../scss/layouts/_print.scss */
+  h1 {
+    margin: 0 !important;
+  }
+
+  /* line 45, ../scss/layouts/_print.scss */
+  .index-car-block {
+    page-break-inside: avoid;
+  }
+
+  /* line 49, ../scss/layouts/_print.scss */
+  .car-page-title-row {
+    margin-top: 100px;
+  }
+
+  /* line 53, ../scss/layouts/_print.scss */
+  .car-page-list-slide {
+    width: 200px;
+    height: 200px;
+  }
+
+  /* line 58, ../scss/layouts/_print.scss */
+  .price-tag {
+    font-size: 35px;
+  }
+}
